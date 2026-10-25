@@ -1,0 +1,293 @@
+/* ==========================================================
+   Aditi Soni — Portfolio
+   ========================================================== */
+
+/* ---------- Theme tokens ---------- */
+:root {
+  --bg: #fdf1f4;
+  --surface: #fff8fa;
+  --line: #f1d3dc;
+  --text: #4a3b45;
+  --muted: #7a6670;
+  --rose: #a63d63;
+  --pink: #f4bfce;
+  --ink: #4a3640;
+  --focus: #8839ef;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #2a1f26;
+    --surface: #35282f;
+    --line: #4d3a44;
+    --text: #f3e1e7;
+    --muted: #c4a9b4;
+    --rose: #f2a4bd;
+    --pink: #e58fab;
+    --ink: #f3e1e7;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #2a1f26;
+  --surface: #35282f;
+  --line: #4d3a44;
+  --text: #f3e1e7;
+  --muted: #c4a9b4;
+  --rose: #f2a4bd;
+  --pink: #e58fab;
+  --ink: #f3e1e7;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.65 "DM Sans", system-ui, sans-serif;
+}
+
+a { color: var(--rose); }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Typography ---------- */
+.script {
+  font: 500 24px Caveat, cursive;
+  color: var(--rose);
+  margin: 0;
+}
+
+h1 {
+  font: 600 clamp(48px, 9vw, 96px)/1 Fraunces, Georgia, serif;
+  color: var(--ink);
+  margin: 6px 0 10px;
+}
+h1 span {
+  display: inline-block;
+  margin-left: .15em;
+}
+
+h2 {
+  font: 600 clamp(28px, 4vw, 40px)/1.2 Fraunces, Georgia, serif;
+  color: var(--ink);
+  margin: 4px 0 18px;
+}
+
+h3 {
+  font: 600 22px Fraunces, Georgia, serif;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+ul { padding-left: 20px; margin: 8px 0; }
+li { margin: 4px 0; }
+
+/* ---------- Background petals canvas ---------- */
+#petals {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Header / nav ---------- */
+header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 5vw;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  z-index: 5;
+}
+
+header nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+header nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 15px;
+}
+header nav a:hover { color: var(--rose); }
+
+.brand {
+  font: 600 20px Fraunces, Georgia, serif;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+#tog {
+  font: inherit;
+  font-size: 13px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 99px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 80px 5vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.role {
+  font-size: 22px;
+  margin: 0;
+  color: var(--ink);
+}
+.lede {
+  max-width: 560px;
+  color: var(--muted);
+}
+.btns {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+.btn {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Cards (projects) */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+.stats {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.stats b {
+  display: block;
+  font: 600 30px Fraunces, Georgia, serif;
+  color: var(--rose);
+}
+.stats small { color: var(--muted); }
+
+/* Skills grid */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.skills .card { margin: 0; }
+.skills h3 { font-size: 17px; }
+.skills p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Experience timeline */
+.job {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 8px 24px;
+  margin-bottom: 26px;
+}
+.job .when {
+  color: var(--muted);
+  font-size: 14px;
+  padding-top: 6px;
+}
+
+/* Contact */
+.links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 5vw 120px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Chibi mascot ---------- */
+#chibi {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  width: 150px;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+  animation: bob 3.4s ease-in-out infinite;
+}
+
+@keyframes bob {
+  50% { transform: translateY(-6px); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .job { grid-template-columns: 1fr; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #chibi { animation: none; }
+  html { scroll-behavior: auto; }
+}
