@@ -84,32 +84,11 @@
       <div class="card">
         <h3>Smart Resume Analyzer &amp; Matcher</h3>
         <p class="meta">Sept 2025 · Django, Redis, Celery, PostgreSQL, Docker</p>
-        <p>Ranks candidates against job descriptions using spaCy extraction, TF-IDF and cosine similarity.</p>
+        <p>Ranks candidates against a job description, so the best fits surface first instead of getting buried in a pile of PDFs.</p>
         <ul>
-          <li>PDF extraction runs in async Celery workers on Redis, so uploads never block the API and p95 parsing time drops.</li>
-          <li>Containerised with Docker Compose, served by Gunicorn, deployed through CI/CD.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Evaluation task pipeline</h3>
-        <p class="meta">Parsewave, 2026 · GPT-5.6-sol, Gemini 3.5 Flash, S3</p>
-        <p>Generates video-editing evaluation tasks with a custom agent harness and validates them before they reach a benchmark, enforcing oracle correctness and NOP constraints.</p>
-        <div class="stats">
-          <div><b>30/day</b><small>tasks sustained</small></div>
-          <div><b>60%</b><small>acceptance rate</small></div>
-          <div><b>−80%</b><small>defective submissions</small></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Formal conjectures</h3>
-        <p class="meta">Dec 2025 – Jan 2026 · Lean, mathlib</p>
-        <p>Machine-checkable statements of open problems for Google DeepMind’s repository.</p>
-        <ul>
-          <li>Green’s 45 and 94, Erdős 120: <a href="https://github.com/google-deepmind/formal-conjectures/pull/1775">#1775</a>, <a href="https://github.com/google-deepmind/formal-conjectures/pull/1846">#1846</a>, <a href="https://github.com/google-deepmind/formal-conjectures/pull/1863">#1863</a></li>
-          <li>OEIS A231201 with tests and CI: <a href="https://github.com/google-deepmind/formal-conjectures/pull/1580">#1580</a></li>
-          <li>Cross-reference fix in Green’s Problem 72: <a href="https://github.com/google-deepmind/formal-conjectures/pull/1946">#1946</a></li>
+          <li>spaCy extracts skills and experience; TF-IDF and cosine similarity score each match.</li>
+          <li>Async Celery workers on Redis parse PDFs, so uploads never block the API.</li>
+          <li>Containerised with Docker Compose and deployed through CI/CD.</li>
         </ul>
       </div>
     </section>
@@ -123,11 +102,17 @@
         <div class="when">June – Aug 2026</div>
         <div>
           <h3>AI Engineer · Parsewave</h3>
+          <p class="meta">GPT-5.6-sol, Gemini 3.5 Flash, S3</p>
           <ul>
-            <li>Designed and scaled a pipeline for generating and validating AI evaluation tasks: 30 video-editing tasks/day at 60% acceptance.</li>
+            <li>Designed and scaled an evaluation task pipeline: a custom agent harness generates video-editing tasks and validates them before they reach a benchmark, enforcing oracle correctness and NOP constraints.</li>
             <li>Built multimodal evaluation workflows with VLM-based judging (Gemini 3.5 Flash) for reproducible benchmarking.</li>
             <li>Cut defective submissions by 80% by analysing agent execution traces and adding automated validation.</li>
           </ul>
+          <div class="stats">
+            <div><b>30/day</b><small>tasks sustained</small></div>
+            <div><b>60%</b><small>acceptance rate</small></div>
+            <div><b>−80%</b><small>defective submissions</small></div>
+          </div>
         </div>
       </div>
 
@@ -135,8 +120,12 @@
         <div class="when">Dec 2025 – Jan 2026</div>
         <div>
           <h3>Open source contributor · Google DeepMind</h3>
+          <p class="meta">formal-conjectures · Lean, mathlib</p>
           <ul>
-            <li>Formalised three open problems in Lean; top 20 contributor with 50+ commits.</li>
+            <li>Wrote machine-checkable statements of open problems in Lean; top 20 contributor with 50+ commits.</li>
+            <li>Green’s 45 and 94, Erdős 120: <a href="https://github.com/google-deepmind/formal-conjectures/pull/1775">#1775</a>, <a href="https://github.com/google-deepmind/formal-conjectures/pull/1846">#1846</a>, <a href="https://github.com/google-deepmind/formal-conjectures/pull/1863">#1863</a></li>
+            <li>OEIS A231201 with tests and CI: <a href="https://github.com/google-deepmind/formal-conjectures/pull/1580">#1580</a></li>
+            <li>Cross-reference fix in Green’s Problem 72: <a href="https://github.com/google-deepmind/formal-conjectures/pull/1946">#1946</a></li>
           </ul>
         </div>
       </div>
@@ -159,7 +148,10 @@
           <h3>B.Tech, Computer Science &amp; Engineering</h3>
           <p class="meta">Dr. A. P. J. Abdul Kalam Technical University, ABESEC · GPA 8.39</p>
           <ul>
-            <li>Organiser, Stellaris 12-hour hackathon, 1200+ registrations.</li>
+            <li>Organiser, <a href="https://stellaris.elixircommunity.in/">Stellaris 2026</a>: a 12-hour hackathon run by GeeksforGeeks x Elixir Tech Community at ABES Engineering College, with 1200+ registrations.</li>
+            <li>Four tracks (AI/ML, Web3, Fintech and Open Innovation), with Major League Hacking as global partner and Devfolio as platform partner.</li>
+            <li>Brought in sponsors including GitHub and Risein (gold), Cyrene AI and CertifyX (silver), and a bronze tier with Replit, Windsurf and Stellar, plus community partners from colleges across the region.</li>
+            <li>Prize pool of $550 across three places, with mentorship, certificates and goodies for the winners.</li>
           </ul>
         </div>
       </div>
